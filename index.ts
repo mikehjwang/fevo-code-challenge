@@ -12,6 +12,12 @@ interface Person {
   name: string
 }
 
+/**
+ *
+ * @param arr1 array of emails
+ * @param arr2 array of emails
+ * @returns null if no duplication, otherwise return merged array
+ */
 function getMergedArray(arr1: string[], arr2: string[]) {
   const mergedArray = [...new Set([...arr1, ...arr2])]
   if (mergedArray.length === arr1.length + arr2.length) {
@@ -21,6 +27,11 @@ function getMergedArray(arr1: string[], arr2: string[]) {
   }
 }
 
+/**
+ *
+ * @param input array of persons
+ * @returns merged persons array
+ */
 function mergeAccounts(input: Person[]): Person[] {
   const output = input.reduce((prev: Person[], cur: Person) => {
     if (prev.length === 0) {
